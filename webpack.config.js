@@ -13,8 +13,11 @@ module.exports = {
   output: {
     path: `${__dirname}/dist/`,
     filename: `${names[libraryTarget]}.js`,
-    library: "sparkline",
-    libraryTarget: libraryTarget
+    library: {
+      name: "sparkline",
+      type: libraryTarget,
+      export: "sparkline"
+    }
   },
 
   module: {

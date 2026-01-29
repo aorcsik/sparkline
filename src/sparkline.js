@@ -80,7 +80,7 @@ export function sparkline(svg, entries, options) {
 
   // The maximum value. This is used to calculate the Y coord of
   // each sparkline datapoint.
-  const max = Math.max(...values);
+  const max = options.max || Math.max(...values);
 
   // Some arbitrary value to remove the cursor and spot out of
   // the viewing canvas.

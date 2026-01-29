@@ -1,4 +1,3 @@
-const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const libraryTarget = process.env.LIBRARY_TARGET;
 const names = {
   var: "sparkline",
@@ -10,9 +9,6 @@ module.exports = {
   devtool: "source-map",
   target: "web",
   mode: "production",
-  node: {
-    fs: "empty"
-  },
 
   output: {
     path: `${__dirname}/dist/`,
@@ -29,9 +25,5 @@ module.exports = {
         include: [`${__dirname}/src/`],
       }
     ]
-  },
-
-  plugins: [
-    new UglifyJSPlugin({sourceMap: true})
-  ]
+  }
 };
